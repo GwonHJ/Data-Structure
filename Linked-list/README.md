@@ -1,18 +1,26 @@
-# cos_Taylor_2016113016.m
+# Linked-list
 
-f(x) = cosx 인 함수를 Taylor Series를 이용하여 파형을 나타내는 function 파일
+개발 환경 : Visual Studio
+개발 언어 : C Language
 
-x가 0 ~ pi/2에 대해 cos파형을 나타내는 fuction파일
+# 링크 예제
 
-입력 예시
+링크의 장점 : 추가와 삭제에 용이
 
 
-    >> x = [ 0 ; 0.06 ; pi/2];
-    >> a = pi/4 ; n = 4;
-    >> cos_Taylor_2016113016(x,a,n)
+예제 조건
+
+    1. 차례대로 2개의 노드를 생성하여 데이터를 입력
+    2. 2개의 노드를 링킹
+    3. 링킹된 2개의 노드의 데이터의 링크를 따라가면 마지막 데이터까지 출력
     
-    
- 예시 실행 화면 
+linkheader.h
 
-   ![kakaotalk_20181122_202530205](https://user-images.githubusercontent.com/44545584/48903727-b34a4580-ee9f-11e8-85d4-202473b60c2b.jpg)
+        해더함수를 저장할때는 확장자를 .h로 저장하고 소스파일 폴더가 아닌 헤더파일 폴더에 저장한다.
+        노드를 생성하는 해더함수
 
+
+linkmain.cpp
+       
+       2개의 노드 생성 및 데이터 입력하는 코드
+      
