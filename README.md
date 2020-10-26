@@ -8,8 +8,6 @@
 
 ## Linked-list
 
-개발 환경 : Visual Studio
-개발 언어 : C Language
 
 LinkedList개념
 
@@ -23,7 +21,7 @@ LinkedList개념
         링크의 장점 : 추가, 삭제 용이
 
 
-### 링크 예제
+#### 링크 예제
 
 
 예제 조건
