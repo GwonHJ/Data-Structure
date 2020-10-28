@@ -44,9 +44,9 @@ linkmain.c
       
 코드 설명  
 
-	linkmain.c
+   linkmain.c
 ```c
-newData = (int*)malloc(sizeof(int));  // 포인터 변수는 항상 주소를 할당해주어야함. malloc은 동적할당
+	newData = (int*)malloc(sizeof(int));  // 포인터 변수는 항상 주소를 할당해주어야함. malloc은 동적할당
 	*newData = 7;
 	node = createNode(newData);
 	newData = (int*)malloc(sizeof(int));    //노드를 두개 생성하기 때문에 두번의 동적할당이 필요
@@ -59,13 +59,14 @@ newData = (int*)malloc(sizeof(int));  // 포인터 변수는 항상 주소를 �
 ```
         
         
-     linkheader.h
+   linkheader.h
 ```c
-typedef struct node {
-void* dataPtr;
-struct node* link;
-} NODE; //node라는 구조체 생성, 타입명 NODE라고 설정.
-//node안에는 data값이 들어갈 dataPtr과 다음에 올 주소값이 들어갈 link가 있음.NODE* createNode(void* itemPtr) { 
+	typedef struct node {
+	void* dataPtr;
+	struct node* link;
+	} NODE; //node라는 구조체 생성, 타입명 NODE라고 설정.
+	//node안에는 data값이 들어갈 dataPtr과 다음에 올 주소값이 들어갈 link가 있음.
+	NODE* createNode(void* itemPtr) { 
             NODE* nodePtr;
             nodePtr = (NODE*)malloc(sizeof(NODE));
             nodePtr->dataPtr = itemPtr;             //dataPtr에 data값을 넣어줌
