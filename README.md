@@ -44,10 +44,9 @@ linkmain.c
       
 코드 설명  
 
-        
-    linkmain.c
-
-	newData = (int*)malloc(sizeof(int));  // 포인터 변수는 항상 주소를 할당해주어야함. malloc은 동적할당
+	linkmain.c
+```c
+newData = (int*)malloc(sizeof(int));  // 포인터 변수는 항상 주소를 할당해주어야함. malloc은 동적할당
 	*newData = 7;
 	node = createNode(newData);
 	newData = (int*)malloc(sizeof(int));    //노드를 두개 생성하기 때문에 두번의 동적할당이 필요
@@ -57,23 +56,23 @@ linkmain.c
 	printf("Data from node 1: %d\n", *nodeData);
 	nodeData = (int*)node->link->dataPtr;   //노드의 link의 dataPtr값이 두번째 node의 data
 	printf("Data from node 2: %d\n", *nodeData);
-        
+```
         
         
      linkheader.h
-        typedef struct node {
-                void* dataPtr;
-                struct node* link;
-                } NODE;          //node라는 구조체 생성, 타입명 NODE라고 설정.
-                                 //node안에는 data값이 들어갈 dataPtr과 다음에 올 주소값이 들어갈 link가 있음.
-
-        NODE* createNode(void* itemPtr) { 
-                NODE* nodePtr;
-                nodePtr = (NODE*)malloc(sizeof(NODE));
-                nodePtr->dataPtr = itemPtr;             //dataPtr에 data값을 넣어줌
-                nodePtr->link = NULL;                   //link에 NULL을 넣어줌
-                                                        //초기값 설정 현재는 다음에 올 data가 없기 떄문에 NULL을 넣음
-                return nodePtr; }
+```c
+typedef struct node {
+void* dataPtr;
+struct node* link;
+} NODE; //node라는 구조체 생성, 타입명 NODE라고 설정.
+//node안에는 data값이 들어갈 dataPtr과 다음에 올 주소값이 들어갈 link가 있음.NODE* createNode(void* itemPtr) { 
+            NODE* nodePtr;
+            nodePtr = (NODE*)malloc(sizeof(NODE));
+            nodePtr->dataPtr = itemPtr;             //dataPtr에 data값을 넣어줌
+            nodePtr->link = NULL;                   //link에 NULL을 넣어줌
+                                                    //초기값 설정 현재는 다음에 올 data가 없기 떄문에 NULL을 넣음
+            return nodePtr; }
+```
 
 
 
@@ -100,3 +99,29 @@ factorial.c
 
    ![factorial png](https://user-images.githubusercontent.com/44545584/48903235-44b8b800-ee9e-11e8-9437-4987ae9e3648.jpg)
 
+코드설명
+
+```c
+#include<stdio.h>
+#include<stdlib.h>
+
+// recursion 방식의 factorial 구하기
+int fact(int);//프로토타입선언
+
+int main(void) {
+	int n = 5;
+	for (int i = 1; i <= n; i++) {
+	if (i < n) {
+		printf("%d != %d\n", i, fact(i));//1!~4!까지의 값 출력
+	}
+	else if(i==n)
+		printf("fact(%d)= %d\n", n,fact(5));//5!의 값 출력
+}
+}
+
+int fact(int n)
+{
+	if (n <= 1) return 1;
+	else return n*fact(n - 1);
+}// factorial 함수
+```
